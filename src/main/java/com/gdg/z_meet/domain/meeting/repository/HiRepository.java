@@ -26,7 +26,7 @@ public interface HiRepository extends JpaRepository<Hi,Long>, HiRepositoryCustom
             "AND h.hiStatus != 'DELETED' ORDER BY h.createdAt DESC")
     List<Hi> findSendHiList(@Param("teamIds") List<Long> teamIds, @Param("userId") Long userId);
 
-    @Modifying
+    @Modifying(flushAutomatically = true, clearAutomatically = true)
     @Query("UPDATE Hi h SET h.hiStatus = 'DELETED' WHERE h.fromId = :teamId OR h.toId = :teamId")
     void updateHiByTeamId(@Param("teamId") Long teamId);
 
