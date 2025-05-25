@@ -44,15 +44,12 @@ public class HiQueryServiceImpl implements HiQueryService{
                 .map(userTeam -> userTeam.getTeam().getId()) // UserTeam에서 teamId 추출
                 .collect(Collectors.toList());
 
-        //myTeamIds에 userId추가
-        myTeamIds.add(userId);
-
         List<Hi> hiList;
         if(action.equals("Receive")) {
-            hiList = hiRepository.findRecevieHiList(myTeamIds);
+            hiList = hiRepository.findRecevieHiList(myTeamIds, userId);
         }
         else{
-            hiList = hiRepository.findSendHiList(myTeamIds);
+            hiList = hiRepository.findSendHiList(myTeamIds, userId);
         }
 
         // 여러 개의 hiListDto 생성
