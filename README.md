@@ -2,6 +2,7 @@
 
 <br> 
 
-## Server Architecture 
+## 아키텍처(V1)
 
-![지밋 아키텍처](https://github.com/user-attachments/assets/39afc09f-9919-4ec9-a35b-a7f4559e39ac)
+
+![스크린샷 2025-05-30 오전 11 00 54](https://github.com/user-attachments/assets/a162598f-eb2e-491f-bcac-c20cf53ae022)
