@@ -74,6 +74,8 @@ jobs:
 
             git fetch origin
             git reset --hard origin/main
+            
+            docker-compose up -d redis mongodb nginx
 
             ./gradlew clean bootjar
 
