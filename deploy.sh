@@ -19,6 +19,10 @@ fi
 echo "Active container: $ACTIVE"
 echo "Deploying to: $IDLE"
 
+# 이전 중지된 동일 이름 컨테이너 제거
+echo "[INFO] Removing old $IDLE container if exists..."
+docker rm -f $IDLE 2>/dev/null || true
+
 # Idle 컨테이너 빌드 및 실행
 echo "[INFO] Starting $IDLE container..."
 docker-compose up -d --build $IDLE
