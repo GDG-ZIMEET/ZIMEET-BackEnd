@@ -26,7 +26,7 @@ docker-compose up -d --build $IDLE
 # Health check
 echo "[INFO] Checking health of $IDLE..."
 for i in {1..10}; do
-  sleep 5
+  sleep 8
   STATUS=$(docker exec $IDLE curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/api/health || echo "000")
   echo "[INFO] Attempt $i - HTTP Status: $STATUS"
   if [ "$STATUS" = "200" ]; then

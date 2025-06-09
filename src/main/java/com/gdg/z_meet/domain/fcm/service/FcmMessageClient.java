@@ -33,7 +33,7 @@ public class FcmMessageClient {
                 .orElseThrow(() -> new BusinessException(Code.USER_NOT_FOUND));
 
         if (!user.isPushAgree()) {
-            log.info("푸시 알림 비동의 상태: userId={}", userId);
+//            log.info("푸시 알림 비동의 상태: userId={}", userId);
             return false;
         }
 
