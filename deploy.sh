@@ -48,9 +48,9 @@ done
 CONF_PATH="./nginx/backend_upstream.conf"
 
 if [ "$IDLE" = "$GREEN_CONTAINER" ]; then
-  echo "server $GREEN_CONTAINER:8080;" > $CONF_PATH
+  echo "server $GREEN_CONTAINER:8080;" | sudo tee $CONF_PATH > /dev/null
 else
-  echo "server $BLUE_CONTAINER:8080;" > $CONF_PATH
+  echo "server $BLUE_CONTAINER:8080;" | sudo tee $CONF_PATH > /dev/null
 fi
 
 # Reload Nginx ( 트래픽 자동 전환됨 )
