@@ -41,10 +41,12 @@ for i in {1..10}; do
 done
 
 # nginx upstream 설정 전환
+CONF_PATH="./nginx/backend_upstream.conf"
+
 if [ "$IDLE" = "$GREEN_CONTAINER" ]; then
-  echo "server $GREEN_CONTAINER:8080;" | sudo tee /etc/nginx/backend_upstream.conf > /dev/null
+  echo "server $GREEN_CONTAINER:8080;" > $CONF_PATH
 else
-  echo "server $BLUE_CONTAINER:8080;" | sudo tee /etc/nginx/backend_upstream.conf > /dev/null
+  echo "server $BLUE_CONTAINER:8080;" > $CONF_PATH
 fi
 
 # Reload Nginx ( 트래픽 자동 전환됨 )
