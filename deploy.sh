@@ -20,14 +20,14 @@ echo "Active container: $ACTIVE"
 echo "Deploying to: $IDLE"
 
 # Idle 컨테이너 빌드 및 실행
-echo "[INFO] Starting backend-$IDLE container..."
-docker-compose up -d --build backend-$IDLE
+echo "[INFO] Starting $IDLE container..."
+docker-compose up -d --build $IDLE
 
 # Health check
-echo "[INFO] Checking health of backend-$IDLE..."
+echo "[INFO] Checking health of $IDLE..."
 for i in {1..10}; do
   sleep 5
-  STATUS=$(docker exec backend-$IDLE curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/api/health || echo "000")
+  STATUS=$(docker exec $IDLE curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/api/health || echo "000")
   echo "[INFO] Attempt $i - HTTP Status: $STATUS"
   if [ "$STATUS" = "200" ]; then
     echo "[SUCCESS] Health check passed."
@@ -35,23 +35,23 @@ for i in {1..10}; do
   fi
   if [ "$i" = 10 ]; then
     echo "[ERROR] Health check failed. Rolling back..."
-    docker-compose stop backend-$IDLE
+    docker-compose stop $IDLE
     exit 1
   fi
 done
 
 # nginx upstream 설정 전환
-if [ "$IDLE" = "green" ]; then
-  echo "server backend-green:8080;" | sudo tee /etc/nginx/backend_upstream.conf > /dev/null
+if [ "$IDLE" = "$GREEN_CONTAINER" ]; then
+  echo "server $GREEN_CONTAINER:8080;" | sudo tee /etc/nginx/backend_upstream.conf > /dev/null
 else
-  echo "server backend-blue:8080;" | sudo tee /etc/nginx/backend_upstream.conf > /dev/null
+  echo "server $BLUE_CONTAINER:8080;" | sudo tee /etc/nginx/backend_upstream.conf > /dev/null
 fi
 
 # Reload Nginx ( 트래픽 자동 전환됨 )
 echo "Reloading Nginx to switch traffic..."
 sudo nginx -s reload
-echo "Switched traffic to backend-$IDLE. Stopping backend-$ACTIVE..."
+echo "Switched traffic to $IDLE. Stopping $ACTIVE..."
 
 # Stop previous active container
-echo "[INFO] Stopping previous container: backend-$ACTIVE"
-docker-compose stop backend-$ACTIVE
+echo "[INFO] Stopping previous container: $ACTIVE"
+docker-compose stop $ACTIVE
