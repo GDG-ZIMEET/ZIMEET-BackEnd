@@ -2,8 +2,6 @@ spring:
   config:
     activate:
       on-profile: prod
-  server:
-    port: 8081
   datasource:
     url: jdbc:mysql://${PROD_DB_ENDPOINT}:3306/gdg?serverTimezone=UTC
     username: ${PROD_DB_USERNAME}

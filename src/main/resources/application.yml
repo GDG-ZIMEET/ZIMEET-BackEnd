@@ -8,8 +8,6 @@ management:
       show-details: always
 
 spring:
-  server:
-    port: 8080
   datasource:
     url: jdbc:mysql://${DEFAULT_URL}:3306/${DEFAULT_SCHEMA}?serverTimezone=UTC
     username: ${DB_USERNAME}
