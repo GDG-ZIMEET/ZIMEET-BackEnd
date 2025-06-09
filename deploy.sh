@@ -57,3 +57,4 @@ echo "Switched traffic to $IDLE. Stopping $ACTIVE..."
 # Stop previous active container
 echo "[INFO] Stopping previous container: $ACTIVE"
 docker-compose stop $ACTIVE
+
