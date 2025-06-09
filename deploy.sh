@@ -21,7 +21,7 @@ echo "Deploying to: $IDLE"
 
 # Idle 컨테이너 빌드 및 실행
 echo "[INFO] Starting $IDLE container..."
-docker-compose up -d --build --remove-orphans $IDLE
+docker-compose up -d --build $IDLE
 
 # Health check
 echo "[INFO] Checking health of $IDLE..."
