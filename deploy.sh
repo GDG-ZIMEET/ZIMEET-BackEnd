@@ -49,7 +49,7 @@ fi
 
 # Reload Nginx ( 트래픽 자동 전환됨 )
 echo "Reloading Nginx to switch traffic..."
-sudo nginx -s reload
+docker exec nginx nginx -s reload
 echo "Switched traffic to $IDLE. Stopping $ACTIVE..."
 
 # Stop previous active container

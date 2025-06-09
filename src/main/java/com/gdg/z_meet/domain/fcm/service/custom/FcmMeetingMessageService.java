@@ -51,9 +51,10 @@ public class FcmMeetingMessageService {
             if (success) {
                 user.setFcmSendOneOne(true);
                 userProfileRepository.save(user);
-            } else {
-                log.warn("1:1 프로필 관련 FCM 메시지 전송 실패 - userId={}", user.getId());
             }
+//            else {
+//                log.warn("1:1 프로필 관련 FCM 메시지 전송 실패 - userId={}", user.getId());
+//            }
         }
     }
 
@@ -72,9 +73,10 @@ public class FcmMeetingMessageService {
             if (success) {
                 user.setFcmSendTwoTwo(true);
                 userRepository.save(user);
-            } else {
-                log.warn("2:2 팀매칭 관련 FCM 메시지 실패 처리됨 - userId={}", user.getId());
             }
+//            else {
+//                log.warn("2:2 팀매칭 관련 FCM 메시지 실패 처리됨 - userId={}", user.getId());
+//            }
         }
     }
 
