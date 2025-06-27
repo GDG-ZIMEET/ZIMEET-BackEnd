@@ -2,13 +2,19 @@
 
 <br> 
 
-## 아키텍처(V1)
 
+## System Architecture (V2) 
+
+<img width="1017" alt="지밋 아키텍처2" src="https://github.com/user-attachments/assets/0dfc8d87-1b50-4eb6-b2e8-89ca5758a33d" />
+
+## System Architecture (V1)
 
 ![스크린샷 2025-05-30 오전 11 00 54](https://github.com/user-attachments/assets/a162598f-eb2e-491f-bcac-c20cf53ae022)
 
+---
 
+## ZI-MEET
+| 1대1, 2대2, 랜덤 미팅까지~! 지금 우리 만나요, ZI밋 💑
 
-## 아키텍처(V2) 
-
-제작중..
+![image](https://github.com/user-attachments/assets/5a29c5e0-44d9-4074-a2db-eb86382a1356)
+![image](https://github.com/user-attachments/assets/ab23dcc9-555d-4549-a316-778bbcae8b49)
