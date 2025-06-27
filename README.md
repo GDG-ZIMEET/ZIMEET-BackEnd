@@ -5,7 +5,7 @@
 
 ## System Architecture (V2) 
 
-<img width="1017" alt="지밋 아키텍처2" src="https://github.com/user-attachments/assets/0dfc8d87-1b50-4eb6-b2e8-89ca5758a33d" />
+<img width="1012" alt="지밋 아키텍처2" src="https://github.com/user-attachments/assets/7f504853-519e-4a4c-b8f3-ba96035b05a4" />
 
 
 ---
