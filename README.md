@@ -7,9 +7,7 @@
 
 <img width="1017" alt="지밋 아키텍처2" src="https://github.com/user-attachments/assets/0dfc8d87-1b50-4eb6-b2e8-89ca5758a33d" />
 
-## System Architecture (V1)
-
-![스크린샷 2025-05-30 오전 11 00 54](https://github.com/user-attachments/assets/a162598f-eb2e-491f-bcac-c20cf53ae022)
+> ![스크린샷 2025-05-30 오전 11 00 54](https://github.com/user-attachments/assets/a162598f-eb2e-491f-bcac-c20cf53ae022)
 
 ---
 
